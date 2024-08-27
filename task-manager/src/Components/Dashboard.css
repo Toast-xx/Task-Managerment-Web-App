@@ -1,0 +1,138 @@
+.dashboard {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    flex: 0 0 200px; /* Fixed width for left sidebar */
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.right-sidebar {
+    flex: 0 0 200px; /* Fixed width for right sidebar */
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    overflow: hidden; /* Hide any overflow */
+}
+
+.main-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.3s, visibility 0.3s; /* Smooth transition for visibility */
+}
+
+.main-content.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.add-task-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Ensure it is on top of other content */
+    padding: 20px; /* Add padding around the form */
+    box-sizing: border-box;
+}
+
+.add-task-form {
+    background: #fff; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Shadow around the form */
+    max-width: 80vw; /* Adjust width to fit within the viewport */
+    max-height: 90vh; /* Limit the height to fit within the viewport */
+    width: 100%; /* Full width of the container */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+.overview-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.circular-progress-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adjust space between progress bars */
+    flex-wrap: wrap; /* Allow wrapping if there isn't enough space */
+}
+
+.circular-progress-bar {
+    width: calc(50% - 10px); /* Make room for spacing */
+    height: auto;
+}
+
+.lower-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adjust space between containers */
+}
+
+.in-progress-container, .current-boards {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.in-progress-container {
+    margin-top: 20px;
+}
+
+.in-progress-container h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.in-progress-tasks {
+    list-style-type: none;
+    padding: 0;
+}
+
+.in-progress-tasks li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.in-progress-tasks li:last-child {
+    border-bottom: none;
+}
+
+.current-boards {
+    margin-top: 20px;
+}
+
+.current-boards h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.current-boards ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.current-boards li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.current-boards li:last-child {
+    border-bottom: none;
+}

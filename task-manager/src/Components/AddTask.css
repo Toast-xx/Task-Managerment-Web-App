@@ -1,0 +1,86 @@
+/* Container for the AddTask component */
+.add-task-container {
+    padding: 20px; /* Adds padding around the content inside the container */
+    background-color: #fff; /* Sets a white background for better readability */
+    border: 1px solid #ddd; /* Adds a light grey border around the container */
+    border-radius: 8px; /* Applies rounded corners to the container */
+}
+
+/* Header of the AddTask component, containing the title and close button */
+.add-task-header {
+    display: flex; /* Uses flexbox for layout alignment */
+    justify-content: space-between; /* Spaces out the title and close button */
+    align-items: center; /* Vertically centers the items within the header */
+}
+
+/* Styling for the close button in the header */
+.close-btn {
+    background: none; /* Removes default background */
+    border: none; /* Removes default border */
+    font-size: 16px; /* Sets font size for readability */
+    cursor: pointer; /* Changes cursor to pointer on hover to indicate a clickable element */
+}
+
+/* Form styling inside the AddTask component */
+.add-task-form {
+    margin-top: 20px; /* Adds space above the form */
+}
+
+/* Wrapper for each input group within the form */
+.input-group {
+    margin-bottom: 15px; /* Adds space below each input group */
+}
+
+/* Common styling for various input elements */
+.task-input,
+.task-select,
+.task-textarea,
+.task-date-input,
+.members-select {
+    width: 100%; /* Ensures full width of the container */
+    padding: 10px; /* Adds padding inside input elements for better spacing */
+    margin-bottom: 10px; /* Adds space below each input element */
+    border: 1px solid #ccc; /* Adds a light grey border for a clean look */
+    border-radius: 4px; /* Applies rounded corners for a softer appearance */
+}
+
+/* Special styling for the multi-select members dropdown */
+.members-select {
+    height: 120px; /* Sets a fixed height to accommodate multiple selections */
+    overflow-y: auto; /* Adds vertical scroll if content exceeds the height */
+}
+
+/* Flexbox layout for action buttons (Add and Cancel) */
+.action-buttons {
+    display: flex; /* Uses flexbox for layout alignment */
+    justify-content: space-between; /* Spaces out the action buttons */
+}
+
+/* General button styling for action buttons */
+.add-task-btn,
+.cancel-btn {
+    padding: 10px 20px; /* Adds padding inside buttons for better touch targets */
+    border: none; /* Removes default border */
+    border-radius: 4px; /* Applies rounded corners for consistency */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Styling for the Add Task button */
+.add-task-btn {
+    background-color: #007bff; /* Sets a blue background for visibility */
+    color: #fff; /* Sets white text color for contrast */
+}
+
+/* Styling for the Cancel button */
+.cancel-btn {
+    background-color: #f4f4f4; /* Sets a light grey background for a subtle appearance */
+}
+
+/* Specific styling for email and telephone input fields */
+input[type="email"],
+input[type="tel"] {
+    width: 100%; /* Ensures full width of the container */
+    padding: 10px; /* Adds padding inside input fields for better spacing */
+    border: 1px solid #ccc; /* Adds a light grey border for a clean look */
+    border-radius: 4px; /* Applies rounded corners for consistency */
+}

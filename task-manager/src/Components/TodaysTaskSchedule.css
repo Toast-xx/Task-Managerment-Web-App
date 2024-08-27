@@ -1,0 +1,24 @@
+.todays-task-schedule {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.todays-task-schedule h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.task-list, .upcoming-tasks {
+    margin-top: 10px;
+}
+
+.task-item {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}

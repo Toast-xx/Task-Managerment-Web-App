@@ -1,0 +1,62 @@
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+}
+
+.home-link {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.task-dropdown, .board-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropdown-button {
+    background-color: #007bff; /* Blue background for the dropdown button */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px; /* Add padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: left; /* Align text to the left */
+    font-size: 16px; /* Font size */
+    width: 100%; /* Full width */
+}
+
+.dropdown-content, .dropdown-menu {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color: #f9f9f9; /* Light background for dropdown */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Box shadow for dropdown */
+    z-index: 1; /* Ensure dropdown appears above other content */
+    top: 100%; /* Position below the dropdown button */
+    left: 0; /* Align to the left */
+}
+
+.dropdown-item {
+    color: black; /* Black text color */
+    padding: 12px 16px; /* Padding for dropdown items */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Ensure block display for full width */
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1; /* Background color on hover */
+}
+
+.task-dropdown:hover .dropdown-content,
+.board-dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
