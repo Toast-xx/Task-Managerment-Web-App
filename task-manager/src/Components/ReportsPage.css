@@ -1,20 +1,27 @@
-/* ReportsPage.css */
 .reports-page {
-    padding: 20px;
+  padding: 20px;
 }
 
-.report-section {
-    margin-bottom: 20px;
+.reports-page h1 {
+  margin-bottom: 20px;
 }
 
-h1 {
-    color: #333;
+.reports-overview {
+  margin-bottom: 30px;
 }
 
-h2 {
-    color: #555;
+.reports-overview h2 {
+  margin-bottom: 10px;
 }
 
-p {
-    color: #666;
+.overview-item {
+  margin-bottom: 5px;
+}
+
+.reports-charts {
+  margin-top: 20px;
+}
+
+.pie-chart {
+  /* Add styling for your pie chart */
 }

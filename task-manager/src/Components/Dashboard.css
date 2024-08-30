@@ -1,138 +1,205 @@
+/* Container for the entire dashboard layout */
 .dashboard {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Ensure header is on top */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow to keep layout clean */
 }
 
-.sidebar {
-    flex: 0 0 200px; /* Fixed width for left sidebar */
-    background-color: #f4f4f4;
-    padding: 10px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-}
-
-.right-sidebar {
-    flex: 0 0 200px; /* Fixed width for right sidebar */
-    background-color: #f4f4f4;
-    padding: 10px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    overflow: hidden; /* Hide any overflow */
-}
-
-.main-content {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    transition: opacity 0.3s, visibility 0.3s; /* Smooth transition for visibility */
-}
-
-.main-content.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.add-task-overlay {
-    position: fixed;
+/* Header styles */
+.header {
+    width: 100%;
+    background-color: #f5f5f5; /* Light grey background for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    position: fixed; /* Fix header at the top */
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10; /* Ensure it is on top of other content */
-    padding: 20px; /* Add padding around the form */
-    box-sizing: border-box;
+    z-index: 1000; /* Ensure it stays above other content */
+    height: 50px; /* Set header height */
+    display: flex; /* Flexbox for header content alignment */
+    align-items: center; /* Center items vertically */
+    padding: 0 20px; /* Padding inside the header */
 }
 
+/* Header content */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Space between logo and notifications */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit the width of the header content */
+    margin: 0 auto; /* Center the header content */
+}
+
+.logo {
+    font-size: 18px; /* Logo font size */
+}
+
+.notifications {
+    display: flex;
+    align-items: center; /* Center the notification icon vertically */
+}
+
+.notification-icon {
+    font-size: 20px; /* Size of the notification icon */
+}
+
+/* Main content area styling with header accounted for */
+.dashboard-body {
+    display: flex;
+    flex: 1;
+    margin-top: 50px; /* Matches header height to avoid overlap */
+}
+
+/* Left sidebar styling */
+.sidebar {
+    flex: 0 0 200px; /* Fixed width of 200px for the sidebar */
+    background-color: #f4f4f4; /* Light grey background */
+    padding: 10px; /* Padding inside the sidebar */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Shadow for depth effect */
+    height: calc(100vh - 50px); /* Full height minus header height */
+    overflow-y: auto; /* Allow vertical scrolling */
+    position: fixed; /* Fix sidebar position */
+    top: 50px; /* Start below the header */
+    left: 0;
+}
+
+
+/* Main content area styling */
+.main-content {
+    flex: 2; /* Take up remaining space between sidebars */
+    margin-left: 200px; /* Space for the left sidebar */
+    margin-right: 0px; /* Space for the right sidebar */
+    padding: 20px; /* Padding inside the main content */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack child elements vertically */
+    transition: opacity 0.3s, visibility 0.3s; /* Smooth transitions for showing/hiding */
+}
+
+/* Hide main content when AddTask overlay is visible */
+.main-content.hidden {
+    opacity: 0; /* Fade out content */
+    visibility: hidden; /* Hide content from layout */
+}
+
+/* Overlay styling for AddTask component */
+.add-task {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0; /* Align to top of viewport */
+    left: 0; /* Align to left of viewport */
+    right: 0; /* Align to right of viewport */
+    bottom: 0; /* Align to bottom of viewport */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+    display: flex; /* Use flexbox for centering the form */
+    justify-content: center; /* Center form horizontally */
+    align-items: center; /* Center form vertically */
+    z-index: 10; /* Ensure it is above other content */
+    padding: 20px; /* Padding around the form */
+    box-sizing: border-box; /* Include padding in total size */
+}
+
+/* Styling for the AddTask form */
 .add-task-form {
     background: #fff; /* White background for the form */
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners for the form */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Shadow around the form */
-    max-width: 80vw; /* Adjust width to fit within the viewport */
-    max-height: 90vh; /* Limit the height to fit within the viewport */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Shadow around the form for depth */
+    max-width: 80vw; /* Limit width to 80% of viewport width */
+    max-height: 90vh; /* Limit height to 90% of viewport height */
     width: 100%; /* Full width of the container */
-    box-sizing: border-box; /* Ensure padding is included in width */
-    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    box-sizing: border-box; /* Include padding in total size */
+    overflow-y: auto; /* Allow scrolling if form content exceeds height */
 }
 
+/* Section for displaying overview items like progress bars */
 .overview-section {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 20px; /* Space below the section */
 }
 
+/* Wrapper for circular progress bars */
 .circular-progress-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Adjust space between progress bars */
-    flex-wrap: wrap; /* Allow wrapping if there isn't enough space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between progress bars */
+    gap: 20px; /* Gap between progress bars */
+    flex-wrap: wrap; /* Wrap progress bars if not enough space */
 }
 
+/* Individual circular progress bar styling */
 .circular-progress-bar {
-    width: calc(50% - 10px); /* Make room for spacing */
-    height: auto;
+    width: calc(50% - 10px); /* Half-width with space for gap */
+    height: auto; /* Adjust height based on content */
 }
 
+/* Section for displaying lower content like in-progress tasks and boards */
 .lower-section {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Adjust space between containers */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between containers */
+    gap: 20px; /* Gap between containers */
 }
 
+/* Styling for the in-progress tasks container */
 .in-progress-container, .current-boards {
-    flex: 1;
-    background-color: #f4f4f4;
-    padding: 10px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    flex: 1; /* Take up equal space in the lower section */
+    background-color: #f4f4f4; /* Light grey background */
+    padding: 10px; /* Padding inside the container */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Shadow for depth effect */
 }
 
+/* Additional margin for the in-progress container */
 .in-progress-container {
-    margin-top: 20px;
+    margin-top: 20px; /* Space above the container */
 }
 
+/* Header styling in in-progress tasks container */
 .in-progress-container h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 16px; /* Font size for the header */
+    margin-bottom: 10px; /* Space below the header */
 }
 
+/* List styling for tasks in progress */
 .in-progress-tasks {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
 }
 
+/* List item styling for tasks */
 .in-progress-tasks li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 5px 0; /* Padding inside each list item */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
 }
 
+/* Remove bottom border from the last item */
 .in-progress-tasks li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* No border for the last item */
 }
 
+/* Additional margin for the current boards container */
 .current-boards {
-    margin-top: 20px;
+    margin-top: 20px; /* Space above the container */
 }
 
+/* Header styling in current boards container */
 .current-boards h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 16px; /* Font size for the header */
+    margin-bottom: 10px; /* Space below the header */
 }
 
+/* List styling for current boards */
 .current-boards ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
 }
 
+/* List item styling for boards */
 .current-boards li {
-    padding: 5px 0;
-    border-bottom: 1px solid #ddd;
+    padding: 5px 0; /* Padding inside each list item */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
 }
 
+/* Remove bottom border from the last item */
 .current-boards li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* No border for the last item */
 }

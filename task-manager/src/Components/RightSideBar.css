@@ -1,20 +1,21 @@
 .right-sidebar {
-  width: 300px; /* Adjust width as needed */
+  width: 200px; /* Adjust width as needed */
   padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 100vh; /* Full viewport height */
+  justify-items: center;
 }
 
 .schedule-container {
   flex: 1; /* Flexible space for schedule */
-  overflow-y: auto; /* Scroll if content overflows */
+  overflow-y: scroll; /* Scroll if content overflows */
 }
 
 .calendar-container {
   flex: 2; /* Flexible space for calendar */
-  overflow: hidden; /* Hide overflow */
+  overflow: scroll; /* Hide overflow */
   cursor: pointer; /* Indicate clickable area */
   display: flex;
   align-items: center;
@@ -28,6 +29,6 @@
 }
 
 .rbc-calendar {
-  height: 100% !important; /* Ensure calendar fits container height */
-  width: 100% !important; /* Ensure calendar fits container width */
+  height: 75% !important; /* Ensure calendar fits container height */
+  width: 75% !important; /* Ensure calendar fits container width */
 }
