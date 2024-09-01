@@ -1,0 +1,6 @@
+.task-progress {
+    display: flex;
+    justify-content: space-around; /* Space out the progress bars */
+    align-items: center;
+    margin: 20px 0; /* Margin to separate from other elements */
+}

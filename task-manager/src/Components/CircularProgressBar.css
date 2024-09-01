@@ -1,43 +1,50 @@
+/* Container for the entire circular progress bar component */
 .circular-progress-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
+    display: flex; /* Applies flexbox layout to center content horizontally and vertically */
+    flex-direction: column; /* Stacks the progress bar and text vertically */
+    align-items: center; /* Centers items horizontally within the container */
+    justify-content: center; /* Centers items vertically within the container */
+    width: 100px; /* Sets the width of the progress bar container; adjust for size */
+    height: 100px; /* Sets the height of the progress bar container; adjust for size */
 }
 
+/* Styling for the SVG element representing the circular chart */
 .circular-chart {
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
+    width: 100%; /* Ensures the SVG chart takes up the full width of the container */
+    height: 100%; /* Ensures the SVG chart takes up the full height of the container */
+    transform: rotate(-90deg); /* Rotates the chart so the progress starts from the top */
 }
 
+/* Common styling for the background and the progress circle */
 .circle-bg,
 .circle {
-    fill: none;
-    stroke-width: 2.8;
-    stroke-linecap: round;
+    fill: none; /* Removes fill color, leaving only the stroke visible */
+    stroke-width: 2.8; /* Sets the thickness of the stroke */
+    stroke-linecap: round; /* Rounds the ends of the stroke for a smoother appearance */
 }
 
+/* Styling for the background circle behind the progress indicator */
 .circle-bg {
-    stroke: #e6e6e6; /* Background color for the circle */
+    stroke: #e6e6e6; /* Sets a light grey color for the background circle */
 }
 
+/* Styling for the progress circle, indicating the current progress */
 .circle {
-    transition: stroke-dasharray 0.5s ease;
+    transition: stroke-dasharray 0.5s ease; /* Animates the stroke-dasharray property for smooth progress transitions */
 }
 
+/* Container for the progress text below the circular chart */
 .progress-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    text-align: center;
+    display: flex; /* Applies flexbox layout to center text horizontally */
+    flex-direction: column; /* Stacks text elements vertically */
+    align-items: center; /* Centers text horizontally within the container */
+    margin-top: 10px; /* Adds space between the chart and the text */
+    text-align: center; /* Centers text within each line */
 }
 
+/* Styling for individual text elements within the progress text container */
 .progress-text p {
-    margin: 0;
-    font-size: 14px; /* Adjust font size as needed */
-    color: #333; /* Text color */
+    margin: 0; /* Removes default margin to avoid extra spacing */
+    font-size: 14px; /* Sets the font size for the progress text; adjust as needed */
+    color: #333; /* Sets a dark grey color for the text */
 }

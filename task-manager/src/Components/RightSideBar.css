@@ -1,34 +1,43 @@
+/* Styles for the right sidebar */
 .right-sidebar {
-  width: 200px; /* Adjust width as needed */
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  height: 100vh; /* Full viewport height */
-  justify-items: center;
+  width: 300px; /* Set the width of the right sidebar; adjust as needed */
+  padding: 10px; /* Add padding for spacing within the sidebar */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack child elements vertically */
+  height: 100vh; /* Full viewport height to cover the entire screen */
+  justify-items: center; /* Center items horizontally in the flex container */
 }
 
+/* Container for the schedule section */
 .schedule-container {
-  flex: 1; /* Flexible space for schedule */
-  overflow-y: scroll; /* Scroll if content overflows */
+  flex: 1; /* Allow this container to take up flexible space in the sidebar */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 
+/* Container for the calendar section */
 .calendar-container {
-  flex: 2; /* Flexible space for calendar */
-  overflow: scroll; /* Hide overflow */
-  cursor: pointer; /* Indicate clickable area */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: 3; /* Take up more space compared to the schedule container */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack header and calendar vertically */
+  overflow: scroll; /* Add scroll bars if content overflows */
   border: 1px solid #ddd; /* Optional border for visual separation */
+  padding: 10px; /* Optional padding for better spacing */
 }
 
+/* Styles for the calendar header */
+.calendar-header {
+  margin-bottom: 10px; /* Add space below the header */
+}
+
+/* Styles for the full calendar page */
 .full-calendar-page {
-  width: 100%;
-  height: 100%;
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
 }
 
+/* Ensure the calendar takes up most of the available space */
 .rbc-calendar {
-  height: 75% !important; /* Ensure calendar fits container height */
-  width: 75% !important; /* Ensure calendar fits container width */
+  height: 80% !important; /* Force the calendar to occupy 80% of the height */
+  width: 80% !important; /* Force the calendar to occupy 80% of the width */
 }

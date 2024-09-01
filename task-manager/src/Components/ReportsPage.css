@@ -1,27 +1,29 @@
+/* Container for the Reports Page with padding around the content */
 .reports-page {
-  padding: 20px;
+  padding: 20px; /* Adds padding around the entire page content */
 }
 
+/* Main heading style for the Reports Page */
 .reports-page h1 {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Space below the main heading */
 }
 
+/* Container for the overview section of the reports */
 .reports-overview {
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Adds space below the overview section */
 }
 
+/* Heading style for sections within the reports overview */
 .reports-overview h2 {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Space below the section heading */
 }
 
+/* Style for individual items within the overview section */
 .overview-item {
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* Space below each overview item */
 }
 
+/* Container for charts in the reports page */
 .reports-charts {
-  margin-top: 20px;
-}
-
-.pie-chart {
-  /* Add styling for your pie chart */
+  margin-top: 20px; /* Space above the charts section */
 }

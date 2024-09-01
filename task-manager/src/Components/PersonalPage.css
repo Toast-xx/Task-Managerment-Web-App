@@ -1,0 +1,78 @@
+/* Styling for the Personal Page component */
+.personal-page {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items vertically */
+    height: 100vh; /* Full viewport height */
+    padding: 20px; /* Padding around the content */
+    background-color: #f7f7f7; /* Light grey background color */
+}
+
+/* Header styling for the Personal Page */
+.personal-page h2 {
+    font-size: 24px; /* Font size for the header */
+    margin-bottom: 20px; /* Space below the header */
+    color: #333; /* Dark grey text color */
+}
+
+/* Container for task categories (To-Do, In Progress, Completed) */
+.tasks-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the containers */
+}
+
+/* Individual task category containers */
+.todo-container, .in-progress-container, .completed-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    background-color: #fff; /* White background color for containers */
+    padding: 20px; /* Padding inside each container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 32%; /* Containers take up about one-third of the width */
+    margin-bottom: 20px; /* Space below each container */
+}
+
+/* Header styling within each task category container */
+.todo-container h3, .in-progress-container h3, .completed-container h3 {
+    font-size: 20px; /* Font size for section headers */
+    margin-bottom: 15px; /* Space below the header */
+    color: #444; /* Medium grey text color */
+}
+
+/* Styling for task lists within each container */
+.todo-container ul, .in-progress-container ul, .completed-container ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Full width of the container */
+}
+
+/* Styling for individual task cards */
+.task-item-card {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    background-color: #ffffff; /* White background color */
+    padding: 15px; /* Padding inside each task card */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below each task card */
+}
+
+/* Header styling within each task card */
+.task-item-card h3 {
+    margin: 0 0 10px; /* Margin below the header */
+    font-size: 18px; /* Font size for task titles */
+    color: #222; /* Dark grey text color */
+}
+
+/* Paragraph styling within each task card */
+.task-item-card p {
+    margin: 5px 0; /* Space around each paragraph */
+    font-size: 14px; /* Font size for task details */
+    color: #666; /* Light grey text color */
+}
+
+/* Remove margin from the last paragraph in each task card */
+.task-item-card p:last-child {
+    margin-bottom: 0; /* No bottom margin */
+}

@@ -1,0 +1,132 @@
+/* 
+  .academic-page
+  --------------
+  Styles the main container for the academic page, using a flexbox layout 
+  to stack content vertically and ensuring full viewport height.
+*/
+
+.academic-page {
+    display: flex; /* Flexbox layout is used for organizing the page structure */
+    flex-direction: column; /* Ensures that the page content is stacked vertically */
+    height: 100vh; /* Occupies the full height of the viewport */
+    padding: 20px; /* Adds consistent padding around the entire page */
+    background-color: #f7f7f7; /* Sets a light gray background for the page */
+}
+
+/* 
+  .academic-page h2
+  -----------------
+  Styles the headings within the academic page, providing size and spacing.
+*/
+
+.academic-page h2 {
+    font-size: 24px; /* Defines the size of the title text */
+    margin-bottom: 20px; /* Provides space below the title to separate it from other content */
+    color: #333; /* Dark gray color for the title to ensure readability */
+}
+
+/* 
+  .tasks-container
+  ----------------
+  Styles the container that holds different task sections (to-do, in-progress, completed),
+  arranging them side by side with space distribution.
+*/
+
+.tasks-container {
+    display: flex; /* Lays out the task containers (to-do, in-progress, completed) side by side */
+    justify-content: space-between; /* Distributes the space between the task containers evenly */
+}
+
+/* 
+  .todo-container, .in-progress-container, .completed-container
+  --------------------------------------------------------------
+  Styles each task container, ensuring a uniform appearance and spacing.
+*/
+
+.todo-container, .in-progress-container, .completed-container {
+    display: flex; /* Flexbox layout within each task container */
+    flex-direction: column; /* Ensures that tasks are stacked vertically within the container */
+    background-color: #fff; /* Sets a white background for each task container */
+    padding: 20px; /* Adds padding inside each container for spacing */
+    border-radius: 8px; /* Rounds the corners of the task containers */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Applies a subtle shadow to create a sense of depth */
+    width: 32%; /* Each container takes up roughly one-third of the available width */
+    margin-bottom: 20px; /* Adds space below each container to separate them from other elements */
+}
+
+/* 
+  .todo-container h3, .in-progress-container h3, .completed-container h3
+  ----------------------------------------------------------------------
+  Styles the headings within each task container, ensuring consistency in font size 
+  and spacing.
+*/
+
+.todo-container h3, .in-progress-container h3, .completed-container h3 {
+    font-size: 20px; /* Sets the font size for the headings within each task container */
+    margin-bottom: 15px; /* Adds space below the headings */
+    color: #444; /* Darker gray color for the headings to distinguish them from the body text */
+}
+
+/* 
+  .todo-container ul, .in-progress-container ul, .completed-container ul
+  -----------------------------------------------------------------------
+  Styles the unordered lists within each task container, removing default list styling 
+  and ensuring full width.
+*/
+
+.todo-container ul, .in-progress-container ul, .completed-container ul {
+    list-style-type: none; /* Removes default list styling (bullets or numbers) */
+    padding: 0; /* Removes default padding from the list */
+    margin: 0; /* Removes default margin from the list */
+    width: 100%; /* Ensures the list occupies the full width of the container */
+}
+
+/* 
+  .task-item-card
+  ---------------
+  Styles individual task cards, providing a clean look with padding, borders, and shadows.
+*/
+
+.task-item-card {
+    display: flex; /* Flexbox layout for individual task cards */
+    flex-direction: column; /* Stacks the content of the task cards vertically */
+    background-color: #ffffff; /* White background color for task cards */
+    padding: 15px; /* Adds padding inside each task card for spacing */
+    border: 1px solid #ccc; /* Adds a light gray border around each task card */
+    border-radius: 5px; /* Rounds the corners of the task cards */
+    margin-bottom: 10px; /* Adds space below each task card to separate it from the next one */
+}
+
+/* 
+  .task-item-card h3
+  ------------------
+  Styles the headings within each task card, defining size and spacing.
+*/
+
+.task-item-card h3 {
+    margin: 0 0 10px; /* Removes margin from the top, adds space below the heading */
+    font-size: 18px; /* Sets the font size for the task card headings */
+    color: #222; /* Dark color for the task card headings for emphasis */
+}
+
+/* 
+  .task-item-card p
+  ------------------
+  Styles the paragraphs within each task card, providing spacing and font size.
+*/
+
+.task-item-card p {
+    margin: 5px 0; /* Adds space above and below each paragraph within the task card */
+    font-size: 14px; /* Sets the font size for the body text within task cards */
+    color: #666; /* Medium gray color for the body text to differentiate from headings */
+}
+
+/* 
+  .task-item-card p:last-child
+  ----------------------------
+  Removes the bottom margin for the last paragraph to avoid unnecessary space.
+*/
+
+.task-item-card p:last-child {
+    margin-bottom: 0; /* Removes bottom margin for the last paragraph to avoid unnecessary space */
+}

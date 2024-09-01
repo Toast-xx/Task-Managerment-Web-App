@@ -1,0 +1,95 @@
+/* src/components/WorkPage.css */
+
+/* Main container for the WorkPage component */
+.work-page {
+    display: flex; /* Use flexbox layout for the container */
+    flex-direction: column; /* Stack children elements vertically */
+    padding: 20px; /* Adds padding around the content inside the container */
+    background-color: #f9f9f9; /* Sets a light grey background for the page */
+    height: 100vh; /* Full viewport height to cover the entire screen */
+}
+
+/* Style for the main heading on the WorkPage */
+h1 {
+    font-size: 2rem; /* Sets the font size for the heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+}
+
+/* Container for all the boards on the WorkPage */
+.boards-container {
+    display: flex; /* Use flexbox layout for the boards container */
+    flex-direction: column; /* Stack boards vertically */
+    gap: 20px; /* Adds space between each board */
+}
+
+/* Container for individual boards */
+.board-container {
+    background-color: #fff; /* Sets a white background for each board */
+    border-radius: 8px; /* Rounds the corners of the board container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    padding: 20px; /* Adds padding inside the board container */
+    flex: 1; /* Allows the board to grow and fill available space */
+}
+
+/* Margins for different types of cards within a board */
+.description-card,
+.subtasks-card,
+.members-card {
+    margin-bottom: 20px; /* Adds space below each card */
+}
+
+/* Style for section headings within the board containers */
+h2 {
+    font-size: 1.5rem; /* Sets the font size for section headings */
+    margin-bottom: 10px; /* Adds space below section headings */
+}
+
+/* Style for sub-section headings within the board containers */
+h3 {
+    font-size: 1.2rem; /* Sets the font size for sub-section headings */
+    margin-bottom: 10px; /* Adds space below sub-section headings */
+}
+
+/* Container for task sections within a board */
+.tasks-container {
+    display: flex; /* Use flexbox layout for the task container */
+    gap: 20px; /* Adds space between each task section */
+}
+
+/* Style for individual task sections: Todo, In Progress, Completed */
+.todo-container,
+.in-progress-container,
+.completed-container {
+    background-color: #fafafa; /* Sets a light grey background for each task section */
+    border-radius: 8px; /* Rounds the corners of each task section */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    padding: 10px; /* Adds padding inside each task section */
+    width: 100%; /* Ensures the task section takes full width available */
+}
+
+/* Style for unordered lists */
+ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Removes padding inside the list */
+}
+
+/* Style for list items */
+li {
+    margin-bottom: 10px; /* Adds space below each list item */
+}
+
+/* General button styling */
+button {
+    background-color: #007bff; /* Sets a blue background for buttons */
+    border: none; /* Removes default border */
+    color: #fff; /* Sets white text color */
+    padding: 8px 12px; /* Adds padding inside buttons */
+    border-radius: 4px; /* Rounds the corners of buttons */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-right: 5px; /* Adds space to the right of buttons */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue background on hover for better visual feedback */
+}

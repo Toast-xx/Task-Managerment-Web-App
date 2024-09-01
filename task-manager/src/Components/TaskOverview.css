@@ -1,0 +1,14 @@
+/* 
+  .task-overview
+  ----------------
+  This class applies styles to a container that provides an overview of tasks. 
+  It is typically used to give a visually distinct background and spacing for the task overview section.
+*/
+
+.task-overview {
+    /* Add padding inside the container to ensure content doesn't touch the edges */
+    padding: 20px;
+
+    /* Set a light gray background color to differentiate the overview section from other elements */
+    background-color: #f4f4f4;
+}

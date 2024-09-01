@@ -2,44 +2,59 @@ import React, { useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './FullCalendar.css'; // For custom styling
+import './FullCalendar.css'; // Ensure you have this file for any additional styling
 
+// Localizer setup for the calendar using moment.js
 const localizer = momentLocalizer(moment);
 
-const FullCalendar = ({ onNavigateToFullCalendar }) => {
+const FullCalendarPage = () => {
+    // State hook to manage calendar events
     const [events, setEvents] = useState([
         { title: 'Meeting', start: new Date(), end: new Date(), allDay: false }
-        // Add more events as needed
     ]);
+    
+    // State hook to manage the current view of the calendar
+    const [currentView, setCurrentView] = useState('week'); // Default view is week
 
+    // Handles slot selection on the calendar to add a new event
     const handleSelectSlot = (slotInfo) => {
+        // Prompt user to enter a new event name
         const title = window.prompt('New Event name');
         if (title) {
-            const newEvent = {
-                title,
-                start: slotInfo.start,
-                end: slotInfo.end,
-                allDay: slotInfo.slots.length === 1
-            };
-            setEvents([...events, newEvent]);
+            // Add new event to the calendar with the selected time slot
+            setEvents([...events, { title, start: slotInfo.start, end: slotInfo.end, allDay: slotInfo.slots.length === 1 }]);
         }
     };
 
+    // Handles changes to the calendar view (month, week, or day)
+    const handleViewChange = (newView) => {
+        setCurrentView(newView); // Update current view state
+    };
+
     return (
-        <div className="full-calendar-container">
+        <div className="full-calendar-page">
+            {/* View switcher buttons to change calendar view */}
+            <div className="view-switcher">
+                <button onClick={() => handleViewChange('month')}>Month View</button>
+                <button onClick={() => handleViewChange('week')}>Week View</button>
+                <button onClick={() => handleViewChange('day')}>Day View</button>
+            </div>
+
+            {/* Calendar component */}
             <Calendar
                 localizer={localizer}
-                events={events}
-                startAccessor="start"
-                endAccessor="end"
-                style={{ height: 400, width: '100%' }} // Adjust the size to fit the sidebar
-                selectable={true}
-                onSelectSlot={handleSelectSlot}
-                onSelectEvent={(event) => alert(event.title)}
-                onDoubleClickEvent={() => onNavigateToFullCalendar()} // Navigate to the full calendar view on double click
+                events={events} // Pass events state to the calendar
+                startAccessor="start" // Field name for event start time
+                endAccessor="end" // Field name for event end time
+                style={{ height: '100vh', width: '100%' }} // Full viewport height and width
+                views={['month', 'week', 'day']} // Available views
+                view={currentView} // Set current view from state
+                onView={handleViewChange} // Handle view change via buttons
+                selectable={true} // Allow slot selection for new events
+                onSelectSlot={handleSelectSlot} // Handle slot selection to create new events
             />
         </div>
     );
 };
 
-export default FullCalendar;
+export default FullCalendarPage;

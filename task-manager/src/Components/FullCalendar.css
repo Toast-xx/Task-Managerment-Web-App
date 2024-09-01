@@ -1,4 +1,5 @@
+/* Styles for the Full Calendar Page component */
 .full-calendar-page {
-    margin: 20px;
-  }
-  
+  /* Adds a 20px margin around the entire Full Calendar Page to provide spacing from other elements */
+  margin: 20px;
+}

@@ -1,24 +1,29 @@
+/* Container for the today's task schedule */
 .todays-task-schedule {
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 10px; /* Adds padding inside the container for spacing around the content */
+    background-color: #f9f9f9; /* Sets a light grey background color for a subtle appearance */
+    border: 1px solid #ddd; /* Adds a light grey border around the container for definition */
+    border-radius: 5px; /* Rounds the corners of the container for a softer look */
 }
 
+/* Styling for the heading inside the today's task schedule */
 .todays-task-schedule h3 {
-    margin-top: 0;
-    font-size: 16px;
+    margin-top: 0; /* Removes the default margin at the top of the heading to align it with the container */
+    font-size: 16px; /* Sets the font size for the heading to make it easily readable */
 }
 
+/* Container for lists of tasks and upcoming tasks */
 .task-list, .upcoming-tasks {
-    margin-top: 10px;
+    margin-top: 10px; /* Adds space above the task lists to separate them from other elements */
 }
 
+/* Styling for individual task items */
 .task-item {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+    padding: 8px; /* Adds padding inside each task item for better spacing and touch targets */
+    border-bottom: 1px solid #ddd; /* Adds a light grey border at the bottom of each task item for visual separation */
 }
 
+/* Removes the bottom border from the last task item in the list */
 .task-item:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Ensures the last task item does not have a border below it */
 }
